@@ -3,9 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello Front-End</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <title>YAHTZEE!</title>
 </head>
 <body>
-  <h1>Hello Front-End</h1>
+<div class="container">
+  <div class="row">
+      <div id="gameBoard" class="col-xs-10 col-xs-offset-1">
+        <div class="row">
+          <div id="logoBar" class="col-xs-12 clearfix">
+            <h1>Yahtzee!</h1> <!-- maybe use a logo instead -->
+            <button id="newGame" class="logobtn">New Game</button>
+            <button id="rules" class="logobtn">Rules</button>
+          </div>
+        </div>
+        <div id="scoreCard" class="col-xs-6">
+        <br>
+        <table class="table table-bordered table-hover table-condensed">
+          <tr>
+            <td>Upper Section</td>
+            <td>Score</td>
+          </tr>
+          <tr>
+            <td>Aces</td>
+            <td id="aces"><a href="#"></a></td>
+          </tr>
+          <tr>
+            <td>Twos</td>
+            <td id="twos"></td>
+          </tr>
+          <tr>
+            <td>Threes</td>
+            <td id="threes"></td>
+          </tr>
+          <tr>
+            <td>Fours</td>
+            <td id="fours"></td>
+          </tr>
+          <tr>
+            <td>Fives</td>
+            <td id="fives"></td>
+          </tr>
+          <tr>
+            <td>Sixes</td>
+            <td id="sixes"></td>
+          </tr>
+          <tr>
+            <td>Total score</td>
+            <td id="totalScore"></td>
+          </tr>
+          <tr>
+            <td>Bonus(if total score is > 63, add 35)</td>
+            <td id="bonus"></td>
+          </tr>
+          <tr>
+            <td>New total</td>
+            <td id="newTotal"></td>
+          </tr>
+          </table>
+
+          <table class="table table-bordered table-hover table-condensed">
+          <tr>
+            <td>Lower Section</td>
+            <td>Score</td>
+          </tr>
+          <tr>
+            <td>3 of a kind</td>
+            <td id="threeOAK"></td>
+          </tr>
+          <tr>
+            <td>4 of a kind</td>
+            <td id="fourOAK"></td>
+          </tr>
+          <tr>
+            <td>Full house</td>
+            <td id="fullHouse"></td>
+          </tr>
+          <tr>
+            <td>Sm. Straight</td>
+            <td id="smStraight"></td>
+          </tr>
+          <tr>
+            <td>Lg Straight</td>
+            <td id="lgStraight"></td>
+          </tr>
+          <tr>
+            <td>Yahtzee</td>
+            <td id="yahtzee"></td>
+          </tr>
+          <tr>
+            <td>Chance</td>
+            <td id="chance"></td>
+          </tr>
+          <tr>
+            <td>Yahtzee Bonus</td>
+            <td id="yahtzeeBonus"></td>
+          </tr>
+          <tr>
+            <td>Total of lower</td>
+            <td id="totalLower"></td>
+          </tr>
+          <tr>
+            <td>Total of upper</td>
+            <td id="totalUpper"></td>
+          </tr>
+          <tr>
+            <td>Grand total</td>
+            <td id="grandTotal"></td>
+          </tr>
+        </table>
+        </div>
+
+        <div id="diceArea" class="col-xs-6">
+          <div id="die1" class="dice"><img src="img/1_dot.png"></div>
+          <div id="die2" class="dice"><img src="img/2_dots.png"></div>
+          <div id="die3" class="dice"><img src="img/3_dots.png"></div>
+          <div id="die4" class="dice"><img src="img/4_dots.png"></div>
+          <div id="die5" class="dice"><img src="img/5_dots.png"></div>
+          <br>
+          <br>
+          <button id="rollbtn">Roll Dice</button>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
