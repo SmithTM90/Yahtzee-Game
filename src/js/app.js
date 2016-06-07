@@ -9,7 +9,7 @@ var Player = {
     held: false
   },
   dice3: {
-    faceValue: 3,
+    faceValue: 2,
     held: false
   },
   dice4: {
@@ -114,6 +114,10 @@ $(document).ready(function() {
   $('#rules').on('click', function() {
     console.log("rules");
   })
+  //below function handles adding the elements of checkArray together for the purpose of returning a sum to be inputed to the score card
+  function add(a,b) {
+    return a + b;
+  };
 
   //roll button causes dice to 'animate' and stop on the randomly selected face
   $('#cb1').on('click', function(){
@@ -294,22 +298,109 @@ $(document).ready(function() {
         }
       }
     }
-
-    console.log(checkArray);
+    var arrayString = checkArray.toString();
+    var arrayPattern = new RegExp('1,1,1', '2,2,2', '3,3,3', '4,4,4', '5,5,5', '6,6,6')
     var length = checkArray.length;
-    if (length < 4) {
-      $('#threeOAK').html('3OAK')
+    if (length < 4 && arrayPattern.test(arrayString) = true) {
+      $('#threeOAK').html(checkArray.reduce(add, 0))
+    } else {
+      return;
+    }
+  });
+
+  $('#fourOAK').on('click', function(){
+    for (var key in Player) {
+      var fValue = Player[key].faceValue;
+      if(fValue) {
+        if(checkArray.indexOf(fValue) === -1) {
+          checkArray.push(fValue);
+        }
+      }
+    }
+    var length = checkArray.length;
+    if (length < 3) {
+      $('#fourOAK').html('4OAK')
+    } else {
+      return;
+    }
+  });
+
+  $('#fullHouse').on('click', function(){
+    for (var key in Player) {
+      var fValue = Player[key].faceValue;
+      if(fValue) {
+        if(checkArray.indexOf(fValue) === -1) {
+          checkArray.push(fValue);
+        }
+      }
+    }
+    var length = checkArray.length;
+    if (length < 2) {
+      $('#fullHouse').html('25')
+    } else {
+      return;
+    }
+  });
+//here is where I learned about Reg Ex!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  $('#smStraight').on('click', function(){
+    for (var key in Player) {
+      var fValue = Player[key].faceValue;
+      if(fValue) {
+        if(checkArray.indexOf(fValue) === -1) {
+          checkArray.push(fValue);
+        }
+      }
+    }
+    var length = checkArray.length;
+    var sortedArray = checkArray.sort();
+    if (sortedArray = /1234|2345|3456/) {
+      $('#smStraight').html('30')
+    } else {
+      return;
+    }
+  });
+
+  $('#lgStraight').on('click', function(){
+    for (var key in Player) {
+      var fValue = Player[key].faceValue;
+      if(fValue) {
+        if(checkArray.indexOf(fValue) === -1) {
+          checkArray.push(fValue);
+        }
+      }
+    }
+    var length = checkArray.length;
+    var sortedArray = checkArray.sort();
+    if (sortedArray = /12345|23456/) {
+      $('#lgStraight').html('40')
     } else {
       return;
     }
   });
 
   $('#yahtzee').on('click', function(){
-    if(Player.dice1.faceValue === Player.dice2.faceValue && Player.dice1.faceValue === Player.dice3.faceValue && Player.dice1.faceValue === Player.dice4.faceValue && Player.dice1.faceValue === Player.dice5.faceValue) {
-      var total = Player.dice1.faceValue + Player.dice2.faceValue + Player.dice3.faceValue + Player.dice4.faceValue + Player.dice5.faceValue;
-      $('#yahtzee').html(total);
-    };
+    for (var key in Player) {
+      var fValue = Player[key].faceValue;
+      if(fValue) {
+        if(checkArray.indexOf(fValue) === -1) {
+          checkArray.push(fValue);
+        }
+      }
+    }
+    var length = checkArray.length;
+    if (length = 1) {
+      $('#yahtzee').html('50')
+    } else {
+      return;
+    }
   });
+
+  // $('#yahtzee').on('click', function(){
+  //   if(Player.dice1.faceValue === Player.dice2.faceValue && Player.dice1.faceValue === Player.dice3.faceValue && Player.dice1.faceValue === Player.dice4.faceValue && Player.dice1.faceValue === Player.dice5.faceValue) {
+  //     var total = Player.dice1.faceValue + Player.dice2.faceValue + Player.dice3.faceValue + Player.dice4.faceValue + Player.dice5.faceValue;
+  //     $('#yahtzee').html(total);
+  //   };
+  // });
 
   //selecting a category to score makes that category unplayable again during the same game
   //categories can be played for 0 score if needed but will input appropriate score if dice fit the requirements for that category
