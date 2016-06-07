@@ -293,18 +293,20 @@ $(document).ready(function() {
     for (var key in Player) {
       var fValue = Player[key].faceValue;
       if(fValue) {
-        if(checkArray.indexOf(fValue) === -1) {
-          checkArray.push(fValue);
-        }
+        checkArray.push(fValue);
       }
     }
-    var arrayString = checkArray.toString();
-    var arrayPattern = new RegExp('1,1,1', '2,2,2', '3,3,3', '4,4,4', '5,5,5', '6,6,6')
     var length = checkArray.length;
-    if (length < 4 && arrayPattern.test(arrayString) = true) {
+    var arrayString = checkArray.toString();
+    console.log(arrayString);
+    var arrayPattern = new RegExp("1,1,1|2,2,2|3,3,3|4,4,4|5,5,5|6,6,6");
+    var patternCheck = arrayPattern.test(arrayString);
+    console.log(length, patternCheck);
+    if (patternCheck === true) {
+      var splitArray = arrayString.split(",");
       $('#threeOAK').html(checkArray.reduce(add, 0))
     } else {
-      return;
+      console.log(splitArray);
     }
   });
 
@@ -312,16 +314,20 @@ $(document).ready(function() {
     for (var key in Player) {
       var fValue = Player[key].faceValue;
       if(fValue) {
-        if(checkArray.indexOf(fValue) === -1) {
-          checkArray.push(fValue);
-        }
+        checkArray.push(fValue);
       }
     }
     var length = checkArray.length;
-    if (length < 3) {
-      $('#fourOAK').html('4OAK')
+    var arrayString = checkArray.toString();
+    console.log(arrayString);
+    var arrayPattern = new RegExp("2,2,2");
+    var patternCheck = arrayPattern.test(arrayString);
+    console.log(length, patternCheck);
+    if (patternCheck === true) {
+      var splitArray = arrayString.split(",");
+      $('#fourOAK').html(checkArray.reduce(add, 0))
     } else {
-      return;
+      console.log(splitArray);
     }
   });
 
@@ -338,7 +344,6 @@ $(document).ready(function() {
     if (length < 2) {
       $('#fullHouse').html('25')
     } else {
-      return;
     }
   });
 //here is where I learned about Reg Ex!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -356,7 +361,6 @@ $(document).ready(function() {
     if (sortedArray = /1234|2345|3456/) {
       $('#smStraight').html('30')
     } else {
-      return;
     }
   });
 
@@ -374,7 +378,6 @@ $(document).ready(function() {
     if (sortedArray = /12345|23456/) {
       $('#lgStraight').html('40')
     } else {
-      return;
     }
   });
 
@@ -391,7 +394,6 @@ $(document).ready(function() {
     if (length = 1) {
       $('#yahtzee').html('50')
     } else {
-      return;
     }
   });
 
