@@ -1,24 +1,68 @@
+var upperTotal = 0;
+var lowerTotal = 0;
+var diceCount = 0;
+
 var Player = {
   count: 0,
   dice1: {
     faceValue: 2,
-    held: false
+    held: false,
+    sides: {
+      1: "../img/1_dot.png",
+      2: "../img/2_dots.png",
+      3: "../img/3_dots.png",
+      4: "../img/4_dots.png",
+      5: "../img/5_dots.png",
+      6: "../img/6_dots.png"
+    }
   },
   dice2: {
     faceValue: 2,
-    held: false
+    held: false,
+    sides: {
+      1: "../img/1_dot.png",
+      2: "../img/2_dots.png",
+      3: "../img/3_dots.png",
+      4: "../img/4_dots.png",
+      5: "../img/5_dots.png",
+      6: "../img/6_dots.png"
+    }
   },
   dice3: {
     faceValue: 2,
-    held: false
+    held: false,
+    sides: {
+      1: "../img/1_dot.png",
+      2: "../img/2_dots.png",
+      3: "../img/3_dots.png",
+      4: "../img/4_dots.png",
+      5: "../img/5_dots.png",
+      6: "../img/6_dots.png"
+    }
   },
   dice4: {
-    faceValue: 4,
-    held: false
+    faceValue: 2,
+    held: false,
+    sides: {
+      1: "../img/1_dot.png",
+      2: "../img/2_dots.png",
+      3: "../img/3_dots.png",
+      4: "../img/4_dots.png",
+      5: "../img/5_dots.png",
+      6: "../img/6_dots.png"
+    }
   },
   dice5: {
-    faceValue: 5,
-    held: false
+    faceValue: 2,
+    held: false,
+    sides: {
+      1: "../img/1_dot.png",
+      2: "../img/2_dots.png",
+      3: "../img/3_dots.png",
+      4: "../img/4_dots.png",
+      5: "../img/5_dots.png",
+      6: "../img/6_dots.png"
+    }
   }
 };
 
@@ -105,10 +149,10 @@ var diceRoll;
 var randomDie = 0;
 
 $(document).ready(function() {
-
   //new game button resets the .val() of the corresponding <td>
   $('#newGame').on('click', function(){
-    $('.scoreCell').html('');
+    $('.cell').html('');
+    Player.count = 0;
   });
   //rules button opens a dialoge box with the rules for yahtzee in it
   $('#rules').on('click', function() {
@@ -119,7 +163,6 @@ $(document).ready(function() {
     return a + b;
   };
 
-  //roll button causes dice to 'animate' and stop on the randomly selected face
   $('#cb1').on('click', function(){
     Player.dice1.held=true;
   });
@@ -137,6 +180,7 @@ $(document).ready(function() {
   });
 
   $('#rollbtn').on('click', function() {
+    //after 3 rolls, choose a category, once chosen, reset player.count to 0 and all checkboxes to false
       if(Player.count === 3) {
         return;
       } else {
@@ -157,16 +201,15 @@ $(document).ready(function() {
         }
         Player.count++;
       }
-
-      //after 3 rolls, choose a category, once chosen, reset player.count to 0 and all checkboxes to false
-
-    // setIntervalX(function(){
-    //   for(var i = 0; i < diceArray.length; i++) {
-    //     randomDie = Math.floor((Math.random() * i) + 1);
-    //     $('.dice img').attr('src', diceArray[randomDie].src);
-    //   }
-    // }, 0100, 12);
-
+      //This was a 3 person effort, but not very much from myself.
+      for(var key in Player) {
+        console.log(Player[key].faceValue);
+        if(key.indexOf('dice') !== -1){
+          diceCount++
+          $('#pic' + diceCount).attr('src', Player['dice' + diceCount].sides[Player[key].faceValue]);
+        }
+      }
+      diceCount = 0;
   });
 
   $('#aces').on('click', function(){
@@ -187,6 +230,16 @@ $(document).ready(function() {
       total = total + 1;
     }
     $('#aces').html(total);
+    for(var i = 0; i < scoreArray.length; i++){
+      if(scoreArray[i].innerHTML === "") {
+        return;
+      } else {
+        var arrayScore = scoreArray[i].innerHTML;
+        //console.log(arrayScore);
+        var scoreNumber = parseInt(arrayScore);
+        upperTotal += scoreNumber;
+      }
+    }
   });
 
   $('#twos').on('click', function(){
@@ -207,6 +260,16 @@ $(document).ready(function() {
       total = total + 2;
     }
     $('#twos').html(total);
+    for(var i = 0; i < scoreArray.length; i++){
+      if(scoreArray[i].innerHTML === "") {
+        return;
+      } else {
+        var arrayScore = scoreArray[i].innerHTML;
+        //console.log(arrayScore);
+        var scoreNumber = parseInt(arrayScore);
+        upperTotal += scoreNumber;
+      }
+    }
   });
 
   $('#threes').on('click', function(){
@@ -227,6 +290,16 @@ $(document).ready(function() {
       total = total + 3;
     }
     $('#threes').html(total);
+    for(var i = 0; i < scoreArray.length; i++){
+      if(scoreArray[i].innerHTML === "") {
+        return;
+      } else {
+        var arrayScore = scoreArray[i].innerHTML;
+        //console.log(arrayScore);
+        var scoreNumber = parseInt(arrayScore);
+        upperTotal += scoreNumber;
+      }
+    }
   });
 
   $('#fours').on('click', function(){
@@ -247,6 +320,16 @@ $(document).ready(function() {
       total = total + 4;
     }
     $('#fours').html(total);
+    for(var i = 0; i < scoreArray.length; i++){
+      if(scoreArray[i].innerHTML === "") {
+        return;
+      } else {
+        var arrayScore = scoreArray[i].innerHTML;
+        //console.log(arrayScore);
+        var scoreNumber = parseInt(arrayScore);
+        upperTotal += scoreNumber;
+      }
+    }
   });
 
   $('#fives').on('click', function(){
@@ -267,6 +350,16 @@ $(document).ready(function() {
       total = total + 5;
     }
     $('#fives').html(total);
+    for(var i = 0; i < scoreArray.length; i++){
+      if(scoreArray[i].innerHTML === "") {
+        return;
+      } else {
+        var arrayScore = scoreArray[i].innerHTML;
+        //console.log(arrayScore);
+        var scoreNumber = parseInt(arrayScore);
+        upperTotal += scoreNumber;
+      }
+    }
   });
 
   $('#sixes').on('click', function(){
@@ -287,6 +380,37 @@ $(document).ready(function() {
       total = total + 6;
     }
     $('#sixes').html(total);
+    for(var i = 0; i < scoreArray.length; i++){
+      if(scoreArray[i].innerHTML === "") {
+        return;
+      } else {
+        var arrayScore = scoreArray[i].innerHTML;
+        //console.log(arrayScore);
+        var scoreNumber = parseInt(arrayScore);
+        upperTotal += scoreNumber;
+      }
+    }
+  });
+
+  $('#totalScore').on('click', function(){
+    var scoreArray = $('#topTable .scoreCell');
+    for(var i = 0; i < scoreArray.length; i++){
+      if(scoreArray[i].innerHTML === "") {
+        return;
+      } else {
+        var arrayScore = scoreArray[i].innerHTML;
+        //console.log(arrayScore);
+        var scoreNumber = parseInt(arrayScore);
+        upperTotal += scoreNumber;
+      }
+    }
+    $('#totalScore').html(upperTotal);
+    $('#totalUpper').html(upperTotal);
+    if (upperTotal > 63) {
+      $('#bonus').html(35);
+      $('#newTotal').html(upperTotal + 65);
+
+    }
   });
 
   $('#threeOAK').on('click', function(){
@@ -294,6 +418,7 @@ $(document).ready(function() {
       var fValue = Player[key].faceValue;
       if(fValue) {
         checkArray.push(fValue);
+        checkArray.sort();
       }
     }
     var length = checkArray.length;
@@ -306,7 +431,7 @@ $(document).ready(function() {
       var splitArray = arrayString.split(",");
       $('#threeOAK').html(checkArray.reduce(add, 0))
     } else {
-      console.log(splitArray);
+      $('#threeOAK').html('0');
     }
   });
 
@@ -315,19 +440,20 @@ $(document).ready(function() {
       var fValue = Player[key].faceValue;
       if(fValue) {
         checkArray.push(fValue);
+        checkArray.sort();
       }
     }
     var length = checkArray.length;
     var arrayString = checkArray.toString();
     console.log(arrayString);
-    var arrayPattern = new RegExp("2,2,2");
+    var arrayPattern = new RegExp("1,1,1,1,|2,2,2,2|3,3,3,3|4,4,4,4|5,5,5,5|6,6,6,6");
     var patternCheck = arrayPattern.test(arrayString);
     console.log(length, patternCheck);
     if (patternCheck === true) {
       var splitArray = arrayString.split(",");
       $('#fourOAK').html(checkArray.reduce(add, 0))
     } else {
-      console.log(splitArray);
+      $('#fourOAK').html('0');
     }
   });
 
@@ -342,25 +468,31 @@ $(document).ready(function() {
     }
     var length = checkArray.length;
     if (length < 2) {
-      $('#fullHouse').html('25')
+      $('#fullHouse').html('25');
     } else {
+      $('#fullHouse').html('0');
     }
   });
 //here is where I learned about Reg Ex!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
   $('#smStraight').on('click', function(){
     for (var key in Player) {
       var fValue = Player[key].faceValue;
       if(fValue) {
-        if(checkArray.indexOf(fValue) === -1) {
-          checkArray.push(fValue);
-        }
+        checkArray.push(fValue);
+        checkArray.sort();
       }
     }
     var length = checkArray.length;
-    var sortedArray = checkArray.sort();
-    if (sortedArray = /1234|2345|3456/) {
-      $('#smStraight').html('30')
+    var arrayString = checkArray.toString();
+    console.log(arrayString);
+    var arrayPattern = new RegExp("1,2,3,4|2,3,4,5|3,4,5,6");
+    var patternCheck = arrayPattern.test(arrayString);
+    console.log(length, patternCheck);
+    if (patternCheck === true) {
+      $('#smStraight').html('30');
     } else {
+      $('#smStraight').html('0');
     }
   });
 
@@ -368,16 +500,20 @@ $(document).ready(function() {
     for (var key in Player) {
       var fValue = Player[key].faceValue;
       if(fValue) {
-        if(checkArray.indexOf(fValue) === -1) {
-          checkArray.push(fValue);
-        }
+        checkArray.push(fValue);
+        checkArray.sort();
       }
     }
     var length = checkArray.length;
-    var sortedArray = checkArray.sort();
-    if (sortedArray = /12345|23456/) {
-      $('#lgStraight').html('40')
+    var arrayString = checkArray.toString();
+    console.log(arrayString);
+    var arrayPattern = new RegExp("1,2,3,4,5|2,3,4,5,6");
+    var patternCheck = arrayPattern.test(arrayString);
+    console.log(length, patternCheck);
+    if (patternCheck === true) {
+      $('#lgStraight').html('40');
     } else {
+      $('#lgStraight').html('0');
     }
   });
 
@@ -385,17 +521,22 @@ $(document).ready(function() {
     for (var key in Player) {
       var fValue = Player[key].faceValue;
       if(fValue) {
-        if(checkArray.indexOf(fValue) === -1) {
-          checkArray.push(fValue);
-        }
+        checkArray.push(fValue);
       }
     }
     var length = checkArray.length;
-    if (length = 1) {
-      $('#yahtzee').html('50')
+    var arrayString = checkArray.toString();
+    console.log(arrayString);
+    var arrayPattern = new RegExp("1,1,1,1,1|2,2,2,2,2|3,3,3,3,3|4,4,4,4,4|5,5,5,5,5|6,6,6,6,6");
+    var patternCheck = arrayPattern.test(arrayString);
+    console.log(length, patternCheck);
+    if (patternCheck === true) {
+      $('#yahtzee').html('50');
     } else {
+      $('#yahtzee').html('0');
     }
   });
+  //I'm leaving this here to show my original check for a yahtzee, as some sort of relic to my past code and how I've re-factored it since then?
 
   // $('#yahtzee').on('click', function(){
   //   if(Player.dice1.faceValue === Player.dice2.faceValue && Player.dice1.faceValue === Player.dice3.faceValue && Player.dice1.faceValue === Player.dice4.faceValue && Player.dice1.faceValue === Player.dice5.faceValue) {
@@ -403,6 +544,36 @@ $(document).ready(function() {
   //     $('#yahtzee').html(total);
   //   };
   // });
+
+  $('#chance').on('click', function(){
+    total = 0;
+    for (var key in Player) {
+      var fValue = Player[key].faceValue;
+      if(fValue) {
+        checkArray.push(fValue);
+      }
+    }
+    console.log(checkArray);
+    for(var i=0; i < checkArray.length; i++) {
+      $('#chance').html(total += checkArray[i]);
+    }
+  })
+
+$('#totalLower').on('click', function(){
+    var scoreArray = $('#bottomTable .scoreCell');
+    for(var i = 0; i < scoreArray.length; i++){
+      if(scoreArray[i].innerHTML === "") {
+        return;
+      } else {
+        var arrayScore = scoreArray[i].innerHTML;
+        //console.log(arrayScore);
+        var scoreNumber = parseInt(arrayScore);
+        lowerTotal += scoreNumber;
+      }
+    }
+    $('#totalLower').html(lowerTotal);
+    $('#grandTotal').html(upperTotal + lowerTotal);
+  });
 
   //selecting a category to score makes that category unplayable again during the same game
   //categories can be played for 0 score if needed but will input appropriate score if dice fit the requirements for that category
