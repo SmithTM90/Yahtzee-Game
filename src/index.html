@@ -20,112 +20,112 @@
         </div>
         <div id="scoreCard" class="col-xs-6">
         <br>
-        <table class="table table-bordered table-hover table-condensed">
+        <table id="topTable" class="table table-bordered table-hover table-condensed">
           <tr>
             <td>Upper Section</td>
             <td>Score</td>
           </tr>
           <tr>
             <td>Aces</td>
-            <td id="aces" class="scoreCell"><a href="#"></a></td>
+            <td id="aces" class="scoreCell cell"></td>
           </tr>
           <tr>
             <td>Twos</td>
-            <td id="twos" class="scoreCell"></td>
+            <td id="twos" class="scoreCell cell"></td>
           </tr>
           <tr>
             <td>Threes</td>
-            <td id="threes" class="scoreCell"></td>
+            <td id="threes" class="scoreCell cell"></td>
           </tr>
           <tr>
             <td>Fours</td>
-            <td id="fours" class="scoreCell"></td>
+            <td id="fours" class="scoreCell cell"></td>
           </tr>
           <tr>
             <td>Fives</td>
-            <td id="fives" class="scoreCell"></td>
+            <td id="fives" class="scoreCell cell"></td>
           </tr>
           <tr>
             <td>Sixes</td>
-            <td id="sixes" class="scoreCell"></td>
+            <td id="sixes" class="scoreCell cell"></td>
           </tr>
           <tr>
             <td>Total score</td>
-            <td id="totalScore" class="scoreCell"></td>
+            <td id="totalScore" class="cell"></td>
           </tr>
           <tr>
             <td>Bonus(if total score is > 63, add 35)</td>
-            <td id="bonus" class="scoreCell"></td>
+            <td id="bonus" class="cell"></td>
           </tr>
           <tr>
             <td>New total</td>
-            <td id="newTotal" class="scoreCell"></td>
+            <td id="newTotal" class="cell"></td>
           </tr>
           </table>
 
-          <table class="table table-bordered table-hover table-condensed">
+          <table id="bottomTable" class="table table-bordered table-hover table-condensed">
           <tr>
             <td>Lower Section</td>
             <td>Score</td>
           </tr>
           <tr>
             <td>3 of a kind</td>
-            <td id="threeOAK" class="scoreCell"></td>
+            <td id="threeOAK" class="scoreCell cell"></td>
           </tr>
           <tr>
             <td>4 of a kind</td>
-            <td id="fourOAK" class="scoreCell"></td>
+            <td id="fourOAK" class="scoreCell cell"></td>
           </tr>
           <tr>
             <td>Full house</td>
-            <td id="fullHouse" class="scoreCell"></td>
+            <td id="fullHouse" class="scoreCell cell"></td>
           </tr>
           <tr>
             <td>Sm. Straight</td>
-            <td id="smStraight" class="scoreCell"></td>
+            <td id="smStraight" class="scoreCell cell"></td>
           </tr>
           <tr>
             <td>Lg Straight</td>
-            <td id="lgStraight" class="scoreCell"></td>
+            <td id="lgStraight" class="scoreCell cell"></td>
           </tr>
           <tr>
             <td>Yahtzee</td>
-            <td id="yahtzee" class="scoreCell"></td>
+            <td id="yahtzee" class="scoreCell cell"></td>
           </tr>
           <tr>
             <td>Chance</td>
-            <td id="chance" class="scoreCell"></td>
+            <td id="chance" class="scoreCell cell"></td>
           </tr>
           <tr>
             <td>Yahtzee Bonus</td>
-            <td id="yahtzeeBonus" class="scoreCell"></td>
+            <td id="yahtzeeBonus" class="scoreCell cell">0</td>
           </tr>
           <tr>
             <td>Total of lower</td>
-            <td id="totalLower" class="scoreCell"></td>
+            <td id="totalLower" class="cell"></td>
           </tr>
           <tr>
             <td>Total of upper</td>
-            <td id="totalUpper" class="scoreCell"></td>
+            <td id="totalUpper" class="scoreCell cell"></td>
           </tr>
           <tr>
             <td>Grand total</td>
-            <td id="grandTotal" class="scoreCell"></td>
+            <td id="grandTotal" class="cell"></td>
           </tr>
         </table>
         </div>
 
         <div id="diceArea" class="col-xs-6">
-          <div id="die1" class="dice"><img id="firstDie" src="img/1_dot.png"></div>
-          <input type="checkbox" id="cb1" class="checkBoxes">
-          <div id="die2" class="dice"><img id="secondDie" src="img/2_dots.png"></div>
-          <input type="checkbox" id="cb2" class="checkBoxes">
-          <div id="die3" class="dice"><img id="thirdDie" src="img/3_dots.png"></div>
-          <input type="checkbox" id="cb3" class="checkBoxes">
-          <div id="die4" class="dice"><img id="fourthDie" src="img/4_dots.png"></div>
-          <input type="checkbox" id="cb4" class="checkBoxes">
-          <div id="die5" class="dice"><img id="fifthDie" src="img/5_dots.png"></div>
-          <input type="checkbox" id="cb5" class="checkBoxes">
+          <div id="die1" class="dice"><img id="pic1" class="diceImg" src="img/1_dot.png"></div>
+            <input type="checkbox" id="cb1" class="checkBoxes">
+          <div id="die2" class="dice"><img id="pic2" class="diceImg" src="img/2_dots.png"></div>
+            <input type="checkbox" id="cb2" class="checkBoxes">
+          <div id="die3" class="dice"><img id="pic3" class="diceImg" src="img/3_dots.png"></div>
+            <input type="checkbox" id="cb3" class="checkBoxes">
+          <div id="die4" class="dice"><img id="pic4" class="diceImg" src="img/4_dots.png"></div>
+            <input type="checkbox" id="cb4" class="checkBoxes">
+          <div id="die5" class="dice"><img id="pic5" class="diceImg" src="img/5_dots.png"></div>
+            <input type="checkbox" id="cb5" class="checkBoxes">
           <br>
           <br>
           <button id="rollbtn">Roll Dice</button>
