@@ -8,60 +8,60 @@ var Player = {
     faceValue: 2,
     held: false,
     sides: {
-      1: "Yahtzee-Game/src/img/1_dot.png",
-      2: "Yahtzee-Game/src/img/2_dots.png",
-      3: "Yahtzee-Game/src/img/3_dots.png",
-      4: "Yahtzee-Game/src/img/4_dots.png",
-      5: "Yahtzee-Game/src/img/5_dots.png",
-      6: "Yahtzee-Game/src/img/6_dots.png"
+      1: "src/img/1_dot.png",
+      2: "src/img/2_dots.png",
+      3: "src/img/3_dots.png",
+      4: "src/img/4_dots.png",
+      5: "src/img/5_dots.png",
+      6: "src/img/6_dots.png"
     }
   },
   dice2: {
     faceValue: 2,
     held: false,
     sides: {
-      1: "Yahtzee-Game/src/img/1_dot.png",
-      2: "Yahtzee-Game/src/img/2_dots.png",
-      3: "Yahtzee-Game/src/img/3_dots.png",
-      4: "Yahtzee-Game/src/img/4_dots.png",
-      5: "Yahtzee-Game/src/img/5_dots.png",
-      6: "Yahtzee-Game/src/img/6_dots.png"
+      1: "src/img/1_dot.png",
+      2: "src/img/2_dots.png",
+      3: "src/img/3_dots.png",
+      4: "src/img/4_dots.png",
+      5: "src/img/5_dots.png",
+      6: "src/img/6_dots.png"
     }
   },
   dice3: {
     faceValue: 2,
     held: false,
     sides: {
-      1: "Yahtzee-Game/src/img/1_dot.png",
-      2: "Yahtzee-Game/src/img/2_dots.png",
-      3: "Yahtzee-Game/src/img/3_dots.png",
-      4: "Yahtzee-Game/src/img/4_dots.png",
-      5: "Yahtzee-Game/src/img/5_dots.png",
-      6: "Yahtzee-Game/src/img/6_dots.png"
+      1: "src/img/1_dot.png",
+      2: "src/img/2_dots.png",
+      3: "src/img/3_dots.png",
+      4: "src/img/4_dots.png",
+      5: "src/img/5_dots.png",
+      6: "src/img/6_dots.png"
     }
   },
   dice4: {
     faceValue: 2,
     held: false,
     sides: {
-      1: "Yahtzee-Game/src/img/1_dot.png",
-      2: "Yahtzee-Game/src/img/2_dots.png",
-      3: "Yahtzee-Game/src/img/3_dots.png",
-      4: "Yahtzee-Game/src/img/4_dots.png",
-      5: "Yahtzee-Game/src/img/5_dots.png",
-      6: "Yahtzee-Game/src/img/6_dots.png"
+      1: "src/img/1_dot.png",
+      2: "src/img/2_dots.png",
+      3: "src/img/3_dots.png",
+      4: "src/img/4_dots.png",
+      5: "src/img/5_dots.png",
+      6: "src/img/6_dots.png"
     }
   },
   dice5: {
     faceValue: 2,
     held: false,
     sides: {
-      1: "Yahtzee-Game/src/img/1_dot.png",
-      2: "Yahtzee-Game/src/img/2_dots.png",
-      3: "Yahtzee-Game/src/img/3_dots.png",
-      4: "Yahtzee-Game/src/img/4_dots.png",
-      5: "Yahtzee-Game/src/img/5_dots.png",
-      6: "Yahtzee-Game/src/img/6_dots.png"
+      1: "src/img/1_dot.png",
+      2: "src/img/2_dots.png",
+      3: "src/img/3_dots.png",
+      4: "src/img/4_dots.png",
+      5: "src/img/5_dots.png",
+      6: "src/img/6_dots.png"
     }
   }
 };
