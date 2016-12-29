@@ -1,8 +1,7 @@
 body {
   background-color: grey;
   font-family: arial;
-  background-image: url("../img/Dice-Color.jpg");
-  background-size: cover;
+  background-image: url("../img/cork-wallet.png");
 }
 
 #gameBoard{
