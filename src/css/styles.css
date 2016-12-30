@@ -1,8 +1,7 @@
 body {
   background-color: grey;
   font-family: arial;
-  background-image: url("../img/Dice-Color.jpg");
-  background-size: cover;
+  background-image: url("../img/cork-wallet.png");
 }
 
 #gameBoard{
@@ -57,7 +56,7 @@ h1{
   border-radius: 20px;
 }
 #die4{
-  margin-left:25%;
+  margin-left:7%;
 }
 #rollbtn{
   margin-left: 40%;
