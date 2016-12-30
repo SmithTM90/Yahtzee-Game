@@ -66,12 +66,12 @@ var Player = {
   }
 };
 //I'm only referencing this array in the roll functionality, but when I sub out the array.length + 1 for it's equivalent numerical value (, sometimes my rolls give me a 0 value.
-var diceArray = [{src: "img/1_dot.png" },
-                {src: "img/2_dots.png"},
-                {src: "img/3_dots.png"},
-                {src: "img/4_dots.png"},
-                {src: "img/5_dots.png"},
-                {src: "img/6_dots.png"}];
+var diceArray = [{src: "src/img/1_dot.png" },
+                {src: "src/img/2_dots.png"},
+                {src: "src/img/3_dots.png"},
+                {src: "src/img/4_dots.png"},
+                {src: "src/img/5_dots.png"},
+                {src: "src/img/6_dots.png"}];
 
 $(document).ready(function() {
   //new game button resets the .val() of the corresponding <td>
