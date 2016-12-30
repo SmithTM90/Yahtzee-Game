@@ -128,7 +128,7 @@ $(document).ready(function() {
       for(var key in Player) {
         if(key.indexOf('dice') !== -1){
           diceCount++
-          $('#pic' + diceCount).attr('src', Player['dice' + diceCount].sides[Player[key].faceValue]);
+          $('#pic' + diceCount).attr('src', 'src/' + Player['dice' + diceCount].sides[Player[key].faceValue]);
         }
       }
       diceCount = 0;
