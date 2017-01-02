@@ -8,60 +8,60 @@ var Player = {
     faceValue: 2,
     held: false,
     sides: {
-      1: "../img/1_dot.png",
-      2: "../img/2_dots.png",
-      3: "../img/3_dots.png",
-      4: "../img/4_dots.png",
-      5: "../img/5_dots.png",
-      6: "../img/6_dots.png"
+      1: "src/img/1_dot.png",
+      2: "src/img/2_dots.png",
+      3: "src/img/3_dots.png",
+      4: "src/img/4_dots.png",
+      5: "src/img/5_dots.png",
+      6: "src/img/6_dots.png"
     }
   },
   dice2: {
     faceValue: 2,
     held: false,
     sides: {
-      1: "../img/1_dot.png",
-      2: "../img/2_dots.png",
-      3: "../img/3_dots.png",
-      4: "../img/4_dots.png",
-      5: "../img/5_dots.png",
-      6: "../img/6_dots.png"
+      1: "src/img/1_dot.png",
+      2: "src/img/2_dots.png",
+      3: "src/img/3_dots.png",
+      4: "src/img/4_dots.png",
+      5: "src/img/5_dots.png",
+      6: "src/img/6_dots.png"
     }
   },
   dice3: {
     faceValue: 2,
     held: false,
     sides: {
-      1: "../img/1_dot.png",
-      2: "../img/2_dots.png",
-      3: "../img/3_dots.png",
-      4: "../img/4_dots.png",
-      5: "../img/5_dots.png",
-      6: "../img/6_dots.png"
+      1: "src/img/1_dot.png",
+      2: "src/img/2_dots.png",
+      3: "src/img/3_dots.png",
+      4: "src/img/4_dots.png",
+      5: "src/img/5_dots.png",
+      6: "src/img/6_dots.png"
     }
   },
   dice4: {
     faceValue: 2,
     held: false,
     sides: {
-      1: "../img/1_dot.png",
-      2: "../img/2_dots.png",
-      3: "../img/3_dots.png",
-      4: "../img/4_dots.png",
-      5: "../img/5_dots.png",
-      6: "../img/6_dots.png"
+      1: "src/img/1_dot.png",
+      2: "src/img/2_dots.png",
+      3: "src/img/3_dots.png",
+      4: "src/img/4_dots.png",
+      5: "src/img/5_dots.png",
+      6: "src/img/6_dots.png"
     }
   },
   dice5: {
     faceValue: 2,
     held: false,
     sides: {
-      1: "../img/1_dot.png",
-      2: "../img/2_dots.png",
-      3: "../img/3_dots.png",
-      4: "../img/4_dots.png",
-      5: "../img/5_dots.png",
-      6: "../img/6_dots.png"
+      1: "src/img/1_dot.png",
+      2: "src/img/2_dots.png",
+      3: "src/img/3_dots.png",
+      4: "src/img/4_dots.png",
+      5: "src/img/5_dots.png",
+      6: "src/img/6_dots.png"
     }
   }
 };
@@ -128,7 +128,7 @@ $(document).ready(function() {
       for(var key in Player) {
         if(key.indexOf('dice') !== -1){
           diceCount++
-          $('#pic' + diceCount).attr('src', 'src/' + Player['dice' + diceCount].sides[Player[key].faceValue]);
+          $('#pic' + diceCount).attr('src', Player['dice' + diceCount].sides[Player[key].faceValue]);
         }
       }
       diceCount = 0;
