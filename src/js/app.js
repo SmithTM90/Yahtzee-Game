@@ -1,6 +1,10 @@
 var upperTotal = 0;
 var lowerTotal = 0;
 var diceCount = 0;
+
+$('.diceTemp').on('click', function () {
+  console.log('dice click')
+})
 //Player object holds values for the dice images, to be referenced in the roll button click handler
 var Player = {
   count: 0,
@@ -88,20 +92,45 @@ $(document).ready(function() {
     return a + b;
   };
   //This handles the checkboxes for each dice, holding it so that it isn't rolled, could be more DRY.
-  $('#checkbox1').on('change', function(){
-    Player.dice1.held = $(this).prop("checked");
+  $('#checkbox1').on('click', function(){
+    $('#pic1').toggleClass('checked');
+    if($('#pic1').hasClass('checked')) {
+      Player.dice1.held = $(this).prop("checked");
+    } else {
+      Player.dice1.held = false;
+    }
   });
-  $('#checkbox2').on('change', function(){
-    Player.dice2.held = $(this).prop("checked");
+  $('#checkbox2').on('click', function(){
+    $('#pic2').toggleClass('checked');
+    if($('#pic2').hasClass('checked')) {
+      Player.dice2.held = $(this).prop("checked");
+    } else {
+      Player.dice2.held = false;
+    }
   });
-  $('#checkbox3').on('change', function(){
-    Player.dice3.held = $(this).prop("checked");
+  $('#checkbox3').on('click', function(){
+    $('#pic3').toggleClass('checked');
+    if($('#pic3').hasClass('checked')) {
+      Player.dice3.held = $(this).prop("checked");
+    } else {
+      Player.dice3.held = false;
+    }
   });
-  $('#checkbox4').on('change', function(){
-    Player.dice4.held = $(this).prop("checked");
+  $('#checkbox4').on('click', function(){
+    $('#pic4').toggleClass('checked');
+    if($('#pic4').hasClass('checked')) {
+      Player.dice4.held = $(this).prop("checked");
+    } else {
+      Player.dice4.held = false;
+    }
   });
-  $('#checkbox5').on('change', function(){
-    Player.dice5.held = $(this).prop("checked");
+  $('#checkbox5').on('click', function(){
+    $('#pic5').toggleClass('checked');
+    if($('#pic5').hasClass('checked')) {
+      Player.dice5.held = $(this).prop("checked");
+    } else {
+      Player.dice5.held = false;
+    }
   });
   $('#rollbtn').on('click', function() {
     //after 3 rolls, choose a category, once chosen, reset player.count to 0 and all checkboxes to false
@@ -153,6 +182,7 @@ $(document).ready(function() {
     }
     $('#aces').html(total);
     $('input[type="checkbox"]').prop("checked", false);
+    $('.diceImg').removeClass('checked')
     Player.dice1.held = false;
     Player.dice2.held = false;
     Player.dice3.held = false;
@@ -179,6 +209,7 @@ $(document).ready(function() {
     }
     $('#twos').html(total);
     $('input[type="checkbox"]').prop("checked", false);
+    $('.diceImg').removeClass('checked')
     Player.dice1.held = false;
     Player.dice2.held = false;
     Player.dice3.held = false;
@@ -205,6 +236,7 @@ $(document).ready(function() {
     }
     $('#threes').html(total);
     $('input[type="checkbox"]').prop("checked", false);
+    $('.diceImg').removeClass('checked')
     Player.dice1.held = false;
     Player.dice2.held = false;
     Player.dice3.held = false;
@@ -231,6 +263,7 @@ $(document).ready(function() {
     }
     $('#fours').html(total);
     $('input[type="checkbox"]').prop("checked", false);
+    $('.diceImg').removeClass('checked')
     Player.dice1.held = false;
     Player.dice2.held = false;
     Player.dice3.held = false;
@@ -257,6 +290,7 @@ $(document).ready(function() {
     }
     $('#fives').html(total);
     $('input[type="checkbox"]').prop("checked", false);
+    $('.diceImg').removeClass('checked')
     Player.dice1.held = false;
     Player.dice2.held = false;
     Player.dice3.held = false;
@@ -283,6 +317,7 @@ $(document).ready(function() {
     }
     $('#sixes').html(total);
     $('input[type="checkbox"]').prop("checked", false);
+    $('.diceImg').removeClass('checked')
     Player.dice1.held = false;
     Player.dice2.held = false;
     Player.dice3.held = false;
@@ -308,6 +343,7 @@ $(document).ready(function() {
       $('#newTotal').html(upperTotal + 65);
     }
     $('input[type="checkbox"]').prop("checked", false);
+    $('.diceImg').removeClass('checked')
     Player.dice1.held = false;
     Player.dice2.held = false;
     Player.dice3.held = false;
@@ -337,6 +373,7 @@ $(document).ready(function() {
       $('#threeOAK').html('0');
     }
     $('input[type="checkbox"]').prop("checked", false);
+    $('.diceImg').removeClass('checked')
     Player.dice1.held = false;
     Player.dice2.held = false;
     Player.dice3.held = false;
@@ -366,6 +403,7 @@ $(document).ready(function() {
       $('#fourOAK').html('0');
     }
     $('input[type="checkbox"]').prop("checked", false);
+    $('.diceImg').removeClass('checked')
     Player.dice1.held = false;
     Player.dice2.held = false;
     Player.dice3.held = false;
@@ -390,6 +428,7 @@ $(document).ready(function() {
       $('#fullHouse').html('0');
     }
     $('input[type="checkbox"]').prop("checked", false);
+    $('.diceImg').removeClass('checked')
     Player.dice1.held = false;
     Player.dice2.held = false;
     Player.dice3.held = false;
@@ -419,6 +458,7 @@ $(document).ready(function() {
       $('#smStraight').html('0');
     }
     $('input[type="checkbox"]').prop("checked", false);
+    $('.diceImg').removeClass('checked')
     Player.dice1.held = false;
     Player.dice2.held = false;
     Player.dice3.held = false;
@@ -447,6 +487,7 @@ $(document).ready(function() {
       $('#lgStraight').html('0');
     }
     $('input[type="checkbox"]').prop("checked", false);
+    $('.diceImg').removeClass('checked')
     Player.dice1.held = false;
     Player.dice2.held = false;
     Player.dice3.held = false;
@@ -474,6 +515,7 @@ $(document).ready(function() {
       $('#yahtzee').html('0');
     }
     $('input[type="checkbox"]').prop("checked", false);
+    $('.diceImg').removeClass('checked')
     Player.dice1.held = false;
     Player.dice2.held = false;
     Player.dice3.held = false;
@@ -494,6 +536,7 @@ $(document).ready(function() {
       $('#chance').html(total += chanceArray[i]);
     }
     $('input[type="checkbox"]').prop("checked", false);
+    $('.diceImg').removeClass('checked')
     Player.dice1.held = false;
     Player.dice2.held = false;
     Player.dice3.held = false;
@@ -515,6 +558,7 @@ $('#totalLower').on('click', function(){
     $('#totalLower').html(lowerTotal);
     $('#grandTotal').html(upperTotal + lowerTotal);
     $('input[type="checkbox"]').prop("checked", false);
+    $('.diceImg').removeClass('checked')
     Player.dice1.held = false;
     Player.dice2.held = false;
     Player.dice3.held = false;

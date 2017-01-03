@@ -4,6 +4,14 @@ body {
   background-image: url("../img/cork-wallet.png");
 }
 
+.checked {
+  border: 1px solid blue;
+}
+
+#firstP {
+  color: white;
+}
+
 #gameBoard{
   border: 2px solid #444;
   margin-top: 2%;
