@@ -17,7 +17,7 @@ body {
   margin-top: 2%;
   background-color: #308030;
   background-image: url("../img/felt.png");
-  height: 850px;
+  height: 950px;
   border-radius: 30px;
   padding: 5px;
 }
@@ -29,7 +29,7 @@ body {
 }
 
 h1{
-  color: black;
+  color: white;
   display: inline-block;
   margin-left: 50px;
 }
@@ -43,7 +43,6 @@ h1{
 #scoreCard{
   margin-top: 2%;
   background-color: rgb(130,100,50);
-  height: 89%;
   display: inline-block;
   border-radius: 10px;
   box-shadow: 2px 2px 40px #111;
