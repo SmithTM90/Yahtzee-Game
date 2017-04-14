@@ -3,79 +3,18 @@ body {
   font-family: arial;
   background-image: url("../img/cork-wallet.png");
 }
-
-.checked {
-  border: 1px solid blue;
-}
-
-#firstP {
-  color: white;
-}
-
-#gameBoard{
-  border: 2px solid #444;
-  margin-top: 2%;
-  background-color: #308030;
-  background-image: url("../img/felt.png");
-  height: 950px;
-  border-radius: 30px;
-  padding: 5px;
-}
-#newGame{
-  display: inline-block;
-}
-#rules{
-  display: inline-block;
-}
-
 h1{
   color: white;
   display: inline-block;
   margin-left: 50px;
 }
-
-.logobtn{
-  margin-top: 20px;
-  float:right;
-  margin-left: 230px;
-}
-
-#scoreCard{
-  margin-top: 2%;
-  background-color: rgb(130,100,50);
-  display: inline-block;
-  border-radius: 10px;
-  box-shadow: 2px 2px 40px #111;
-}
-
-#diceArea{
-  margin-top: 15%;
-  display: inline-block;
-}
-
-.dice{
-  width:100px;
-  height:100px;
-  display: inline-block;
-  margin-bottom: 2%;
-  margin-left: 30px;
-  box-shadow: 1px 3px 30px #111;
-  border-radius: 20px;
-}
-#die4{
-  margin-left:7%;
-}
-#rollbtn{
-  margin-left: 40%;
-}
 img{
   width: 100%;
 }
-
 button{
-  -webkit-border-radius: 10;
-  -moz-border-radius: 10;
-  border-radius: 10px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
   -webkit-box-shadow: 1px 2px 20px #222;
   -moz-box-shadow: 1px 2px 20px #222;
   box-shadow: 1px 2px 20px #222;
@@ -87,7 +26,6 @@ button{
   border: solid #2f991f 1px;
   text-decoration: none;
 }
-
 button:hover{
   background: #1fed22;
   text-decoration: none;
@@ -97,4 +35,60 @@ table{
 }
  table td a{
   display: block;
- }
+}
+#firstP {
+  color: white;
+}
+#gameBoard{
+  border: 2px solid #444;
+  margin-top: 2%;
+  background-color: #308030;
+  background-image: url("../img/felt.png");
+  height: 950px;
+  border-radius: 7px;
+  padding: 5px;
+}
+#newGame{
+  display: inline-block;
+}
+#rules{
+  display: inline-block;
+}
+#die4{
+  margin-left:7%;
+}
+#rollbtn{
+  margin-left: 40%;
+}
+#logoBar {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+#scoreCard{
+  margin-top: 2%;
+  background-color: rgb(130,100,50);
+  display: inline-block;
+  border-radius: 7px;
+  box-shadow: 2px 2px 40px #111;
+}
+#diceArea{
+  margin-top: 15%;
+  display: inline-block;
+}
+.logobtn{
+  margin-top: 20px;
+  float:right;
+  margin-left: 230px;
+}
+.checked {
+  border: 1px solid blue;
+}
+.dice{
+  width:100px;
+  height:100px;
+  display: inline-block;
+  margin-bottom: 2%;
+  margin-left: 30px;
+  box-shadow: 1px 3px 30px #111;
+  border-radius: 20px;
+}
